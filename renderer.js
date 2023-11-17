@@ -8,17 +8,25 @@
 //console.log('Hello world!'); 
 
 //C:\Users\Diseño\Downloads\Documents\markdown-editor\marked\
-const marked = require('./marked/bin');
+//const marked = require('./marked/bin');
+
+//import marked from './marked.js';
+// const marked = require('marked');
 const markdownView = document.querySelector('#markdown');
 const htmlView = document.querySelector('#html'); 
 
 const renderToMarkdown = (markdown) => {
-    //htmlView.innerHTML = 'asfaljsfjasjdf';
-    htmlView.innerHTML = marked(markdown, {sanitize: true});
+    // htmlView.innerHTML = 'asfaljsfjasjdf';
+    htmlView.innerHTML = markdown;
+    
+    // htmlView.innerHTML = marked(markdown, {sanitize: true});
 } 
-
 markdownView.addEventListener('keyup', e => {
-    //console.log(e.target.value)
+    // console.log(e.target.value);
+    
     const currentContent = e.target.value;
     renderToMarkdown(currentContent)
+    
 })
+
+
